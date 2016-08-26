@@ -21,7 +21,8 @@ RUN apt-get update && \
     echo "Preparação do Repository do Componente Docker - MVN" && \
     mkdir -p ~go/.m2/repository/com ~/.m2/repository/com && \
     cp -r /tmp/spotify ~/.m2/repository/com/. && \
-    cp -r /tmp/spotify ~go/.m2/repository/com/.
+    cp -r /tmp/spotify ~go/.m2/repository/com/. && \
+    chown go. -R ~go/.m2
 
 #    git clone https://github.com/spotify/docker-maven-plugin.git && \
 #    cd docker-maven-plugin/ && \
