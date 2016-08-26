@@ -5,7 +5,7 @@ MAINTAINER Bruno Emanuel <bemanuel.pe@gmail.com>
 ENV MVN_VER=apache-maven-3.3.9
 ENV MVN_FILE=${MVN_VER}-bin.tar.gz
 ENV MVN_URL=http://mirror.nbtelecom.com.br/apache/maven/maven-3/3.3.9/binaries/${MVN_FILE} \
-    DEBIAN_FRONTEND="noninteractive
+    DEBIAN_FRONTEND="noninteractive"
 
 COPY spotify /tmp/spotify
 
@@ -25,12 +25,5 @@ RUN echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" | sudo tee 
     cp -r /tmp/spotify ~/.m2/repository/com/. && \
     cp -r /tmp/spotify ~go/.m2/repository/com/. && \
     chown go. -R ~go/.m2
-    
-
-#    git clone https://github.com/spotify/docker-maven-plugin.git && \
-#    cd docker-maven-plugin/ && \
-#    /usr/local/apache-maven-3.3.9/bin/mvn install
 
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-#CMD ["/sbin/my_init"]
