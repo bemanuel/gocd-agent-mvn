@@ -1,0 +1,6 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Aug 25 18:08:28 BRT 2016
+docker-maven-plugin-0.4.12-SNAPSHOT.pom>=
+docker-maven-plugin-0.4.12-SNAPSHOT-sources.jar>=
+docker-maven-plugin-0.4.12-SNAPSHOT-javadoc.jar>=
+docker-maven-plugin-0.4.12-SNAPSHOT.jar>=
