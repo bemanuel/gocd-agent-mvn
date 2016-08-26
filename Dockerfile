@@ -1,6 +1,6 @@
 FROM gocd/gocd-agent 
 
-MAINTAINER Bruno Emanuel <bemanuel@agespisa.com.br>
+MAINTAINER Bruno Emanuel <bemanuel.pe@gmail.com>
 
 ENV MVN_VER=apache-maven-3.3.9
 ENV MVN_FILE=${MVN_VER}-bin.tar.gz
