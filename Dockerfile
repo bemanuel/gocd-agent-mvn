@@ -9,8 +9,10 @@ ENV MVN_URL=http://mirror.nbtelecom.com.br/apache/maven/maven-3/3.3.9/binaries/$
 
 COPY spotify /tmp/spotify
 
-RUN apt-get update && \
-    apt-get -y install wget openjdk-7-jdk && \
+RUN echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" | sudo tee /etc/apt/sources.list.d/docker.list && \
+    apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && \
+    apt-get update && \
+    apt-get -y install wget openjdk-7-jdk docker-engine && \
     apt-get clean && \
     echo "Instalação do Maven em /usr/local/mvn" && \
     wget -t0 -c -P /tmp/ ${MVN_URL} && \
@@ -23,6 +25,7 @@ RUN apt-get update && \
     cp -r /tmp/spotify ~/.m2/repository/com/. && \
     cp -r /tmp/spotify ~go/.m2/repository/com/. && \
     chown go. -R ~go/.m2
+    
 
 #    git clone https://github.com/spotify/docker-maven-plugin.git && \
 #    cd docker-maven-plugin/ && \
